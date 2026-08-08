@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "name": "roomsaathi-web-platform",
+  "cleanUrls": true,
+  "routes": [
+    {
+      "src": "/api/v1/app/latest-version",
+      "dest": "/api/latest-version.json"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, OPTIONS"
+        }
+      ]
+    }
+  ]
+}

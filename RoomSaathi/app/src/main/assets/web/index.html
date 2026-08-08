@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoomSaathi — Stays, Roommate Finder & Property Rentals</title>
+  <meta name="description" content="Official website and web platform for RoomSaathi. Find verified rooms, apartments, villas, and hostels or download the RoomSaathi Android app." />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#008080" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="brand-icon">R</div>
+        <span>RoomSaathi</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#explore" class="active">Explore Rooms</a></li>
+        <li><a href="#download">Download App</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#admin">Admin Release</a></li>
+      </ul>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <button class="btn btn-secondary" onclick="alert('Connected to RoomSaathi REST API cross-platform backend.')">Web API Active</button>
+        <a href="#download" class="btn btn-primary">Download APK</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <span style="background: #E0F2F1; color: #008080; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 13px; display: inline-block; margin-bottom: 16px;">
+          ⚡ Certified Verified Listings & AI Concierge
+        </span>
+        <h1>Find Your Cozy <span>Saathi</span> for Stays & Roommates</h1>
+        <p>
+          Discover verified rooms, luxury apartments, and budget hostels across Nepal. 
+          Use RoomSaathi directly on the web or download our native Android app for real-time mobile booking tickets and QR check-ins.
+        </p>
+        <div class="hero-ctas">
+          <a href="#download" class="btn btn-primary" style="padding: 14px 28px; font-size: 16px;">
+            📱 Download RoomSaathi App
+          </a>
+          <a href="#explore" class="btn btn-secondary" style="padding: 14px 28px; font-size: 16px;">
+            🌐 Use RoomSaathi on Web
+          </a>
+        </div>
+      </div>
+
+      <!-- APK Download Widget -->
+      <div class="apk-card" id="download">
+        <div class="apk-header">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 44px; height: 44px; background: #008080; border-radius: 12px; color: white; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800;">R</div>
+            <div>
+              <h3 style="font-size: 18px; font-weight: 800;">RoomSaathi Android App</h3>
+              <p style="font-size: 12px; color: #64748B;">Official APK Package</p>
+            </div>
+          </div>
+          <span class="apk-badge">Official Release</span>
+        </div>
+
+        <div class="apk-meta">
+          <div>
+            <span>Version</span>
+            <strong id="apkVersion">v1.1.0</strong>
+          </div>
+          <div>
+            <span>File Size</span>
+            <strong id="apkSize">28 MB</strong>
+          </div>
+          <div>
+            <span>Release Date</span>
+            <strong id="apkDate">August 2026</strong>
+          </div>
+          <div>
+            <span>Compatibility</span>
+            <strong>Android 7.0+</strong>
+          </div>
+        </div>
+
+        <p style="font-size: 12px; color: #64748B; margin-bottom: 16px; background: #F8FAFC; padding: 10px; border-radius: 8px;">
+          ✨ Release Notes: Integrated Web Platform synchronization, instant QR check-in ticket generation, and AI Concierge search.
+        </p>
+
+        <a id="apkDownloadBtn" href="https://roomsaathi.app/downloads/roomsaathi-v1.1.0.apk" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px; font-size: 15px;">
+          ⬇️ Download RoomSaathi APK
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Room Explorer Section -->
+  <section class="section-container" id="explore">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Explore Verified Properties</h2>
+        <p style="color: #64748B; font-size: 14px;">Browse live stays updated synchronously from RoomSaathi REST API</p>
+      </div>
+      <div style="font-size: 13px; font-weight: 700; color: #008080;">
+        4 Live Listings
+      </div>
+    </div>
+
+    <!-- Category Pills -->
+    <div class="category-pills">
+      <div class="category-pill active" data-cat="ALL">All Properties</div>
+      <div class="category-pill" data-cat="ROOM">Rooms</div>
+      <div class="category-pill" data-cat="APARTMENT">Apartments</div>
+      <div class="category-pill" data-cat="VILLA">Villas</div>
+      <div class="category-pill" data-cat="COWORKING">Coworking</div>
+    </div>
+
+    <!-- Room Cards Grid -->
+    <div class="room-grid" id="roomGridContainer">
+      <!-- Injected by app.js -->
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="section-container" id="features" style="background: white; border-radius: 24px; padding: 40px; border: 1px solid #E2E8F0;">
+    <h2 class="section-title" style="text-align: center; margin-bottom: 32px;">Why Users Choose RoomSaathi</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+      <div style="padding: 20px; background: #F8FAFC; border-radius: 16px;">
+        <div style="font-size: 28px; margin-bottom: 12px;">🛡️</div>
+        <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 6px;">100% KYC Verified Hosts</h3>
+        <p style="font-size: 13px; color: #64748B;">Every property listing undergoes identity and physical safety verification before publication.</p>
+      </div>
+      <div style="padding: 20px; background: #F8FAFC; border-radius: 16px;">
+        <div style="font-size: 28px; margin-bottom: 12px;">⚡</div>
+        <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 6px;">Instant QR Check-ins</h3>
+        <p style="font-size: 13px; color: #64748B;">Receive an encrypted digital QR receipt on your phone for seamless check-ins with host approval.</p>
+      </div>
+      <div style="padding: 20px; background: #F8FAFC; border-radius: 16px;">
+        <div style="font-size: 28px; margin-bottom: 12px;">🤖</div>
+        <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 6px;">Gemini AI Concierge</h3>
+        <p style="font-size: 13px; color: #64748B;">Smart AI companion helps you find ideal stay packages, price estimates, and neighborhood insights.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="margin-top: 60px; border-top: 1px solid #E2E8F0; padding: 40px 24px; background: white; text-align: center;">
+    <p style="font-weight: 800; color: #008080; font-size: 20px; margin-bottom: 8px;">RoomSaathi</p>
+    <p style="font-size: 13px; color: #64748B; margin-bottom: 16px;">Cross-Platform Stay Finder & Roommate Platform • Android & Web Version</p>
+    <p style="font-size: 12px; color: #94A3B8;">&copy; 2026 RoomSaathi. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
